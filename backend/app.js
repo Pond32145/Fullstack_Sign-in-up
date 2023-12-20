@@ -63,7 +63,7 @@ app.post('/authen', jsonParser, function (req, res, next) {
         var decoded = jwt.verify(token, secret );
         res.json({status: 'ok',decoded})
     } catch (error) {
-        res.json({status: 'error', message: err.message})
+        res.json({status: 'error', message: error.message})
     }
 
 })
